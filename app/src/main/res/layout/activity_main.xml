@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background_1080"
+    android:padding="0dp">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/primary_10"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Mosque Logo -->
+        <ImageView
+            android:id="@+id/mosque_logo"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentDescription="@string/image_pvis_logo_description"
+            android:scaleType="fitStart"
+            android:src="@drawable/morden_mosque" />
+
+        <!-- Date and Clock -->
+        <LinearLayout
+            android:id="@+id/date_clock_container"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white_50"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:gravity="center">
+
+            <!-- Clock -->
+            <TextView
+                android:id="@+id/clock_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_clock_view_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:gravity="fill" />
+
+            <!-- Date -->
+            <TextView
+                android:id="@+id/date_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_date_view_content"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="-0.07"
+                android:textColor="@color/primary"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- PVIS Logo -->
+        <ImageView
+            android:id="@+id/pvis_logo"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:contentDescription="@string/image_pvis_logo_description"
+            android:scaleType="fitEnd"
+            android:src="@drawable/pvis_logo" />
+    </LinearLayout>
+
+    <!-- Body Section -->
+    <LinearLayout
+        android:id="@+id/body_section"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@id/announcement_ticker"
+        app:layout_constraintTop_toBottomOf="@id/header_section">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!-- ProgressBar for Loader -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone" />
+            <!-- Prayer Times -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/prayer_times_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <!-- Sunrise/Sunset + Advertisement Group -->
+        <LinearLayout
+            android:id="@+id/sunrise_sunset_ad_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="15dp">
+
+            <!-- Sunrise and Sunset -->
+            <LinearLayout
+                android:id="@+id/sunrise_sunset_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/sunrise_icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="@string/image_sunrise_icon_description"
+                        android:src="@drawable/sunrise_icon" />
+
+                    <TextView
+                        android:id="@+id/sunrise_time_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/text_sunrise_time_label"
+                        android:textColor="@color/primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <ProgressBar
+                        android:id="@+id/progress_bar_sunrise_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/sunrise_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/text_sunrise_time_content"
+                        android:textColor="@color/primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Sunset -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/sunset_icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="@string/image_sunset_icon_description"
+                        android:src="@drawable/sunset_icon" />
+
+                    <TextView
+                        android:id="@+id/sunset_time_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/text_sunset_time_label"
+                        android:textColor="@color/primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_sunset_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/sunset_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/text_sunset_time_content"
+                        android:textColor="@color/primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Advertisement -->
+            <!--            <LinearLayout-->
+            <!--                android:id="@+id/advertisement_section"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="center"-->
+            <!--                android:background="@color/pink"-->
+            <!--                android:padding="20dp"-->
+            <!--                android:layout_marginTop="30dp">-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/advertisement_text"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="64dp"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:text="@string/text_advertisement_content"-->
+            <!--                    android:textColor="@color/white"-->
+            <!--                    android:textSize="20sp" />-->
+            <!--            </LinearLayout>-->
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Footer Section -->
+    <TextView
+        android:id="@+id/announcement_ticker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_announcement_content"
+        android:textSize="18sp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="15dp"
+        android:background="@color/primary_10"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:autoLink="all"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

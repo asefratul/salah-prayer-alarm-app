@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="0dp">
+
+    <!-- Prayer Name -->
+    <TextView
+        android:id="@+id/prayer_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="Fajr"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/primary"
+        android:paddingVertical="3dp"
+        android:layout_margin="0dp" />
+
+    <!-- Start Time -->
+    <TextView
+        android:id="@+id/prayer_start_time"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="6:34 AM"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/primary"
+        android:background="@drawable/textview_border_right"
+        android:paddingVertical="3dp"
+        android:layout_margin="0dp" />
+
+    <!-- Athan Time -->
+    <TextView
+        android:id="@+id/prayer_adhan_time"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="6:45 AM"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/primary"
+        android:background="@drawable/textview_border_right"
+        android:paddingVertical="3dp"
+        android:layout_margin="0dp" />
+
+    <!-- Iqamah Time -->
+    <TextView
+        android:id="@+id/prayer_iqamah_time"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="6:55 AM"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/primary"
+        android:background="@drawable/textview_border_right"
+        android:paddingVertical="3dp"
+        android:layout_margin="0dp" />
+</LinearLayout>

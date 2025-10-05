@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PVIS-Salah-Times-App</string>
+    <string name="image_pvis_logo_description">Pembina Valley Islamic Society Inc.</string>
+    <string name="image_sunrise_icon_description">Sunrise Time</string>
+    <string name="image_sunset_icon_description">Sunset Time</string>
+    <string name="text_announcement_ticker_text_not_found">No announcements is available.</string>
+    <string name="text_clock_view_content">10:11 AM</string>
+    <string name="text_date_view_content">Wednesday, 12 December</string>
+    <string name="text_sunrise_time_content">05:55 AM</string>
+    <string name="text_sunrise_time_label">SUNRISE</string>
+    <string name="text_sunset_time_content">17:01 PM</string>
+    <string name="text_sunset_time_label">SUNSET</string>
+    <string name="text_advertisement_content">Area for Advertise. Image Advertise. Can come from DB.</string>
+    <string name="text_announcement_content" />
+</resources>
